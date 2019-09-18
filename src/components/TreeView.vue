@@ -7,7 +7,7 @@
                 :items="items"
         >
             <template slot="label" slot-scope="{ item }">
-                <i :class=item.icon>&nbsp;&nbsp;&nbsp;</i>
+               <v-icon>{{item.icon}}</v-icon>
                 <a @click="openDialog(item)">{{ item.name }}</a>
             </template>
         </v-treeview>
@@ -34,12 +34,12 @@
                 {
                     id: 1,
                     name: 'Curriculum vitae',
-                    icon: 'far fa-file'
+                    icon: 'mdi-file-account'
                 },
                 {
                     id: 2,
-                    name: 'Diplômes :',
-                    icon: 'fas fa-graduation-cap',
+                    name: 'Diplômes',
+                    icon: 'mdi-school',
                     children: [
                         {
                             id: 3,
@@ -61,8 +61,8 @@
                 },
                 {
                     id: 7,
-                    name: 'Expériences :',
-                    icon: 'far fa-folder-open',
+                    name: 'Expériences',
+                    icon: 'mdi-file-export',
                     children: [
                         {
                             id: 8,
@@ -81,12 +81,12 @@
                 {
                     id: 11,
                     name: 'Réalisations',
-                    icon: 'fas fa-keyboard'
+                    icon: 'mdi-checkbox-marked'
                 },
                 {
                     id: 12,
                     name: 'Certifications',
-                    icon: 'fas fa-certificate'
+                    icon: 'mdi-file-certificate'
                 },
             ],
         }),
