@@ -1,20 +1,26 @@
 <template>
   <div>
     <v-navigation-drawer v-model="drawer" app>
-      <v-list dense>
+      <v-row class="justify-center mt-5 mb-5">
+        <v-img
+                src="@/assets/profil.jpg"
+                max-width="150"
+                max-height="200"
+                alt="Photo de profil"
+                position="center"
+        ></v-img>
+      </v-row>
+      <v-divider></v-divider>
+      <tree-view></tree-view>
+
+
+
+
         <v-list-item>
-          <v-row class="justify-center">
-          <v-img
-                  src="@/assets/profil.jpg"
-                  max-width="150"
-                  max-height="200"
-                  alt="Photo de profil"
-                  position="center"
-          ></v-img>
-          </v-row>
+
         </v-list-item>
         <v-list-item>
-          <v-divider></v-divider>
+
         </v-list-item>
         <v-list-item @click="goCv">
           <v-list-item-action>
@@ -56,7 +62,7 @@
             <v-list-item-title>Certifications</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-      </v-list>
+
     </v-navigation-drawer>
 
     <v-app-bar app color="indigo" dark>
@@ -68,7 +74,7 @@
       <v-container class="fill-height">
         <v-row align="center" justify="center">
         </v-row>
-        
+
       </v-container>
     </v-content>
     <v-footer color="indigo" app>
@@ -78,8 +84,13 @@
 </template>
 
 <script>
+  import TreeView from '../components/TreeView';
+
 export default {
   name: "Accueil",
+  components:{
+    TreeView
+  },
   props: {
     source: String
   },
