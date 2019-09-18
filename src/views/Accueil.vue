@@ -2,6 +2,20 @@
   <div>
     <v-navigation-drawer v-model="drawer" app>
       <v-list dense>
+        <v-list-item>
+          <v-row class="justify-center">
+          <v-img
+                  src="@/assets/profil.jpg"
+                  max-width="150"
+                  max-height="200"
+                  alt="Photo de profil"
+                  position="center"
+          ></v-img>
+          </v-row>
+        </v-list-item>
+        <v-list-item>
+          <v-divider></v-divider>
+        </v-list-item>
         <v-list-item @click="goCv">
           <v-list-item-action>
             <i class="far fa-file"></i>
@@ -53,13 +67,6 @@
     <v-content>
       <v-container class="fill-height">
         <v-row align="center" justify="center">
-          <v-img
-            src="@/assets/profil.jpg"
-            max-width="150"
-            max-height="200"
-            alt="Photo de profil"
-            position="center"
-          ></v-img>
         </v-row>
         
       </v-container>
