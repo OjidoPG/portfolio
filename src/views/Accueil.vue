@@ -11,7 +11,7 @@
         ></v-img>
       </v-row>
       <v-divider></v-divider>
-      <tree-view :cv="cv"></tree-view>
+      <tree-view :cv="cv" :bac="bac" :dev="dev" :inf="inf" :sec="sec"></tree-view>
     </v-navigation-drawer>
 
     <v-app-bar app color="indigo" dark>
@@ -30,43 +30,62 @@
           <br />J’ai ensuite décidé de poursuivre ma montée en compétence en rejoignant le CESI pour une POEC RIL.
           <br />J’ai depuis trouvé un emploi au sein de la société C2i santé.
         </p>
-        <div>
-          <a href="https://www.linkedin.com/in/pascal-giraud-1a2513128" target="_blank">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a href="https://github.com/OjidoPG" target="_blank">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://www.facebook.com/pascal.giraud.1485537" target="_blank">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-        </div>
       </div>
+      
     </v-content>
     <v-footer color="indigo" app>
       <span class="white--text">&copy; 2019 - GIRAUD Pascal</span>
+      <a href="https://www.linkedin.com/in/pascal-giraud-1a2513128" target="_blank">
+         <v-icon>mdi-linkedin-box</v-icon>
+        </a>
+        <a href="https://github.com/OjidoPG" target="_blank">
+          <v-icon>mdi-github-circle</v-icon>
+        </a>
+        <a href="https://www.facebook.com/pascal.giraud.1485537" target="_blank">
+          <v-icon>>mdi-facebook-box</v-icon>
+        </a>
     </v-footer>
-
     <cv :cv="cv"></cv>
+    <bac :bac="bac"></bac>
+    <dev :dev="dev"></dev>
+    <inf :inf="inf"></inf>
+    <sec :sec="sec"></sec>
   </div>
 </template>
 
 <script>
 import TreeView from "../components/TreeView";
 import Cv from "../components/Cv";
+import Bac from "../components/Bac";
+import Dev from "../components/Dev";
+import Inf from "../components/Inf";
+import Sec from "../components/Sec";
 
 export default {
   name: "Accueil",
   components: {
     TreeView,
-    Cv
-  },
-  props: {
-    source: String
+    Cv,
+    Bac,
+    Dev,
+    Inf,
+    Sec
   },
   data: () => ({
     drawer: false,
     cv: {
+      dialog: false
+    },
+    bac: {
+      dialog: false
+    },
+    dev: {
+      dialog: false
+    },
+    inf: {
+      dialog: false
+    },
+    sec: {
       dialog: false
     }
   })
